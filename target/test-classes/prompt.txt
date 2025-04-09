@@ -1,3 +1,0 @@
-We are working on a project that requires us to generate testcases with minimal code interaction.
-
-This is one of the end sample test case that needs to be generated.
