@@ -44,7 +44,7 @@ pipeline {
         stage('Deploy to Development Server') {
             steps {
                 // Use the sshagent plugin to run deployment commands on your dev server
-                sshagent (credentials: ["${SSH_CREDENTIALS_ID}"]) {
+                sshagent (credentials: "${SSH_CREDENTIALS_ID}") {
                     // The deployment assumes that your remote deployment directory contains the docker-compose.yml
                     // which refers to the image as ${DOCKER_REGISTRY}/iiitb720:latest.
                     sh """
