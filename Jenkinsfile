@@ -52,10 +52,7 @@ pipeline {
                             echo "Attempting to explicitly pull image ${env.IMAGE_NAME}..." &&
                             /usr/bin/docker pull ${env.IMAGE_NAME} &&
 
-                            echo "Executing docker compose pull (ensures all service images are checked)..." &&
-                            /usr/bin/docker compose pull &&
-
-                            echo "Executing docker compose up -d (will use pulled images)..." &&
+                            echo "Starting containers using docker compose up -d..." &&
                             /usr/bin/docker compose up -d &&
 
                             echo "Deployment commands finished."
@@ -64,6 +61,7 @@ pipeline {
                 }
             }
         }
+
     }
     post {
         failure {
