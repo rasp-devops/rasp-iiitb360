@@ -53,7 +53,7 @@ pipeline {
                             /usr/bin/docker pull ${env.IMAGE_NAME} &&
 
                             echo "Starting containers using docker compose up -d..." &&
-                            /usr/bin/docker compose up &&
+                            /usr/bin/docker compose up -d &&
 
                             echo "Deployment commands finished."
                         '
