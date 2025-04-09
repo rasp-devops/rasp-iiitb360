@@ -48,7 +48,7 @@ pipeline {
                     // The deployment assumes that your remote deployment directory contains the docker-compose.yml
                     // which refers to the image as ${DOCKER_REGISTRY}/iiitb720:latest.
                     sh """
-                        ssh -o StrictHostKeyChecking=no yourSSHUser@${DEV_SERVER} '
+                        ssh -o StrictHostKeyChecking=no ctri@${DEV_SERVER} '
                             cd ${REMOTE_DEPLOY_DIR} &&
                             docker-compose pull &&
                             docker-compose up -d
