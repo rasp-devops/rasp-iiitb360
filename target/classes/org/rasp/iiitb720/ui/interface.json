@@ -1,0 +1,32 @@
+{
+			"resource" : "interface",
+			"table" : true,
+			"tile" : false,
+			"display_name" : "interface details",
+			"menu_context" : "setup",
+			"page_name" : {
+				"list" : "interface",
+				"add" : "interface",
+				"edit" : "interface",
+				"view" : "interface"
+			},
+			"add_required" : true,
+			"modify_required" : true,
+			"delete_required" : true,
+			"login_required" : true,
+			"list" : {
+				"fields":[
+				]
+			},
+			"form" : {
+					"blocks": [
+						{
+							"name":"interface",
+							"order":1,
+							"fields":[
+							],
+							"title":"interface details"
+						}
+					]
+			}
+}

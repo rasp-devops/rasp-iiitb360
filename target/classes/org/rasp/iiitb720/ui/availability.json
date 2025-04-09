@@ -1,0 +1,47 @@
+{
+			"resource" : "availability",
+			"table" : true,
+			"tile" : false,
+			"display_name" : "availability",
+			"menu_context" : "setup",
+			"page_name" : {
+				"list" : "availability",
+				"add" : "availability",
+				"edit" : "availability",
+				"view" : "availability"
+			},
+			"add_required" : true,
+			"modify_required" : true,
+			"delete_required" : true,
+			"login_required" : true,
+			"list" : {
+				"fields":[
+				]
+			},
+			"form" : {
+					"blocks": [
+						{
+							"name":"interface",
+							"order":1,
+							"fields":[
+								{
+									"label":"interface",
+									"foreign_resource":"interface",
+									"class_name":"col-sm-6 fix",
+									"order":3,
+									"type":"STRING",
+									"component":"dropdown",
+									"datasource":{
+										"application":"null",
+										"resource":"interface",
+										"query_id":"GET_ALL",
+										"key":"id"
+									},
+									"name":"interface_id"
+								}
+							],
+							"title":"availability Details"
+						}
+					]
+			}
+}
