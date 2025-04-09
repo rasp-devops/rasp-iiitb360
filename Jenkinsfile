@@ -8,7 +8,7 @@ pipeline {
         // - dockerRegistryCreds: credentials for logging into your private Docker registry
         // - devServerSSH: SSH credentials (private key) to access the development server
         DOCKER_REGISTRY_CREDENTIALS = 'private_registry_creds'
-        SSH_CREDENTIALS_ID = 'devServerSSH1'
+        SSH_CREDENTIALS_ID = 'devServerSSH'
         // Development server IP
         DEV_SERVER = '172.16.202.57'
         // Directory on the remote dev server where your docker-compose.yml is located.
