@@ -43,15 +43,16 @@ pipeline {
         }
         stage('Deploy to Development Server') {
             steps {
-                // Use the sshagent plugin to run deployment commands on your dev server
                 sshagent (credentials: [env.SSH_CREDENTIALS_ID]) {
-                    // The deployment assumes that your remote deployment directory contains the docker-compose.yml
-                    // which refers to the image as ${DOCKER_REGISTRY}/iiitb720:latest.
                     sh """
                         ssh -o StrictHostKeyChecking=no ctri@${DEV_SERVER} '
+                            echo "Changing directory to ${REMOTE_DEPLOY_DIR}" &&
                             cd ${REMOTE_DEPLOY_DIR} &&
-                            docker-compose pull &&
-                            docker-compose up -d
+                            echo "Executing docker compose pull..." &&
+                            /usr/bin/docker compose pull &&  # <--- USE 'docker compose' with full path to docker
+                            echo "Executing docker compose up -d..." &&
+                            /usr/bin/docker compose up -d && # <--- USE 'docker compose' with full path to docker
+                            echo "Deployment commands finished."
                         '
                     """
                 }
