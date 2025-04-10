@@ -69,7 +69,7 @@ pipeline {
     }
     post {
         failure {
-            echo "Build, push, or deployment failed!"
+            echo "Build, push, or deployment failed! hi "
         }
     }
 }
